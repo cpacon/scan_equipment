@@ -112,6 +112,10 @@ def ntt(equipmt_address):
 		#HVE9100
 	        equipmt_Model = extract_data_OID(get_snmp_data(equipmt_address, "iso.3.6.1.4.1.3930.17.1.1.1.0"))
 		equipmt_SoftwareVersion = extract_data_OID(get_snmp_data(equipmt_address, ".1.3.6.1.4.1.3930.17.1.1.4.0"))
+	elif (str(get_snmp_data(equipmt_address, "iso.3.6.1.2.1.1.5.0")).find("HVE9200")) != -1:
+		#HVE9200
+	        equipmt_Model = extract_data_OID(get_snmp_data(equipmt_address, "iso.3.6.1.4.1.3930.33.1.1.1.0"))
+		equipmt_SoftwareVersion = extract_data_OID(get_snmp_data(equipmt_address, ".3.6.1.4.1.3930.33.1.1.4.0"))
 	else:
 		equipmt_Model = "NTT other"
 		equipmt_SoftwareVersion = "n/a"
